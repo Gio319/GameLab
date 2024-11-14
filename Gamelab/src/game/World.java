@@ -38,7 +38,7 @@ public class World {
 		//Boiler Room Code
 		boilerRoom.addExit(darkBasement, 'w');
 		boilerRoom.addObject(crowbar);
-		boilerRoom.addobject(lighter);
+		boilerRoom.addObject(lighter);
 		
 		//Dining Room Code
 		diningroom.addExit(eastHall, 'e');
