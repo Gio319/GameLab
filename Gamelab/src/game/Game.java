@@ -143,9 +143,7 @@ public class Game {
 					System.out.println("");
 				}
 				else {
-					System.out.println("");
-					System.out.println("YOU HAVE NOTHIIIIIIIING!!!!");
-					System.out.println("");
+					System.out.println("\nYOU HAVE NOTHIIIIIIIING!!!!\n");
 					
 				}
 				break;
