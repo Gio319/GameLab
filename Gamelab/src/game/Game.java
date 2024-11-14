@@ -47,10 +47,16 @@ public class Game {
 					break;
 				}
 				else {
+					if (currentRoom.getObject(words[1]).getTake() == false) {
+						System.out.println("You can't carry" + words[1]);
+						break;
+					}
+					else {
 				inventory.add(currentRoom.getObject(words[1]));
 				System.out.println("You took " + currentRoom.getObject(words[1]).getName()+"\n");
 				currentRoom.removeItem(words[1]);
 				break;}
+				}
 				
 				// Look cases
 			case "look":
@@ -111,10 +117,11 @@ public class Game {
 						if (words[1] .equals(i.getName())) {
 							i.open();
 						}
-						else {
-							
-							}
-						}
+						//else {
+						//	System.out.println("This item is no where to be found.\n");
+							//System.out.println("So you can't open "+words[1]);
+						//}
+					}
 			
 				}
 					
@@ -154,9 +161,15 @@ public class Game {
 					break;
 				}
 				else {
+					if (nextRoom.getLock() == true) {
+						System.out.println("The door is locked Try finding something to open it.");
+						break;
+					}
+					else {
 					currentRoom = nextRoom;
 				System.out.println("");
-				break;}
+				break;}}
+			
 			case "x":
 				System.out.println("Thanks for walking through my game");
 				break;

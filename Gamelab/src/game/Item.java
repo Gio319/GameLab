@@ -4,6 +4,7 @@ public class Item {
 
 	private String name;
 	private String description;
+	private boolean canTake = true;
 	
 	public Item(String n ,String desc) {
 		description = desc;
@@ -33,5 +34,13 @@ public class Item {
 	public void use() {
 		Game.print("You can't use that! ");
 	}
-	
+	public void setTakeT() {
+		canTake = true;
+	}
+	public void setTakeF(){
+		canTake = false;
+	}
+	public boolean getTake() {
+		return canTake;
+	}
 }

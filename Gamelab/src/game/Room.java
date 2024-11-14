@@ -3,6 +3,7 @@ import java.util.HashMap;
 
 public class Room {
 
+	//private String name;
 	private String description;
 	private Room east;	
 	private Room west;	
@@ -10,10 +11,23 @@ public class Room {
 	private Room south;	
 	private Room up;	
 	private Room down;
+	private String name;
+
+	private boolean lock = false;
 	
 	//public Item object;
 	public HashMap<String,Item> objects = new HashMap<String,Item>() ;
 	
+	public boolean getLock() {
+		return lock;
+	}
+	
+	public void setLocked() {
+		lock = true;
+	}
+	public void setUnlock() {
+		lock = false;
+	}
 	
 	public void addObject(Item i) {
 	  objects.put(i.getName(), i); 					// this is the set method
@@ -25,7 +39,8 @@ public class Room {
 		objects.remove(object);
 	}
 	
-	public Room(String script) {
+	public Room(String n,String script) {
+		name = n;
 		description = script;
 	}
 	public Room getExit(char exit) {
@@ -76,5 +91,8 @@ public class Room {
 	public String toString() {
 		return description + "";
 	}// End of toString
+	
+	
+	
 	
 	}
